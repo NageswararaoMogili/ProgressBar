@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row fstrow">
+    <div class="col-12">
+      <h2 class="h2">To Do List App</h2>
+    </div>
+  </div>
+  <hr />
+  <div class="row inputDiv">
+    <h3>Enter To Do Task Here</h3>
+    <div class="col-10">
+      <input class="form-control" type="text" [(ngModel)]="todo" #todoData />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-success" (click)="onSubmit()">Add</button>
+    </div>
+    <div><p></p></div>
+  </div>
+  <hr />
+  <div class="div"></div>
+  <div class="taskDiv">
+    <h3>Taks:-</h3>
+    <div class="row showRow" *ngFor="let item of toDoList; let i = index">
+      <div class="col-10">
+        <p class="form-control">{{ item }}</p>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-info" (click)="onEdit(i)">Edit</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-danger" (click)="onDelete(i)">X</button>
+      </div>
+    </div>
+  </div>
+</div>
